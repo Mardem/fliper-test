@@ -1,3 +1,4 @@
+import 'package:fliper/config/colors/default.dart';
 import 'package:fliper/config/global.dart';
 import 'package:fliper/screens/components/layouts/main.dart';
 import 'package:fliper/screens/resume/components/header.dart';
@@ -46,9 +47,64 @@ class ResumeScreen extends StatelessWidget {
                 ResumeTotalInvest(
                   total: 400,
                 ),
+                SizedBox(
+                  height: size.width * .05,
+                ),
                 Container(
                   height: size.width * .10,
-                )
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text('Rentabilidade/mês'),
+                      Text(
+                        '2.767%',
+                        style: TextStyle(
+                          fontSize: size.width * .05,
+                          fontWeight: FontWeight.bold,
+                          color: DefaultColors.defaultBlue,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Container(
+                  height: size.width * .10,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text('CDI'),
+                      Text(
+                        '3.45%',
+                        style: TextStyle(
+                          fontSize: size.width * .05,
+                          fontWeight: FontWeight.bold,
+                          color: DefaultColors.defaultBlue,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Container(
+                  height: size.width * .10,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text('Ganho/mês'),
+                      Text(
+                        'R\$ 1833,23',
+                        style: TextStyle(
+                          fontSize: size.width * .05,
+                          fontWeight: FontWeight.bold,
+                          color: DefaultColors.defaultBlue,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Divider(
+                  color: DefaultColors.defaultGrey.withOpacity(.2),
+                  thickness: 2,
+                ),
               ],
             ),
           ),

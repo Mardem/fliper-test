@@ -5,8 +5,14 @@ class AppButtonOutline extends StatelessWidget {
   final GestureTapCallback onPressed;
   final Widget child;
   final EdgeInsets padding;
+  final double elevation;
 
-  const AppButtonOutline({this.onPressed, this.child, this.padding});
+  const AppButtonOutline({
+    this.onPressed,
+    this.child,
+    this.padding,
+    this.elevation,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +23,7 @@ class AppButtonOutline extends StatelessWidget {
       ),
       style: ButtonStyle(
         backgroundColor: MaterialStateProperty.all(Colors.white),
-        elevation: MaterialStateProperty.all(2),
+        elevation: MaterialStateProperty.all(elevation ?? 2),
         side: MaterialStateProperty.all<BorderSide>(
           BorderSide(
             color: DefaultColors.defaultBlue,

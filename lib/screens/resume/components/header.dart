@@ -23,7 +23,10 @@ class ResumeHeader extends StatelessWidget {
         Expanded(
           child: Container(
             alignment: Alignment.centerRight,
-            child: Icon(LineIcons.verticalEllipsis),
+            child: Icon(
+              LineIcons.verticalEllipsis,
+              color: Color.fromRGBO(154, 163, 188, 1.0),
+            ),
           ),
         )
       ],

@@ -27,7 +27,7 @@ class ResumeScreen extends StatelessWidget {
                 BoxShadow(
                   color: Color.fromRGBO(178, 183, 201, 1),
                   spreadRadius: 1,
-                  offset: Offset(1, 0.5),
+                  offset: Offset(0.5, 0.5),
                 ),
               ],
               color: Colors.white,
@@ -56,12 +56,15 @@ class ResumeScreen extends StatelessWidget {
                   ),
                 ),
                 Divider(
+                  height: 30,
                   color: DefaultColors.defaultGrey.withOpacity(.2),
                   thickness: 2,
                 ),
                 Container(
                   alignment: Alignment.bottomRight,
                   child: AppButtonOutline(
+                    elevation: 0,
+                    padding: EdgeInsets.symmetric(horizontal: 5),
                     child: Text(
                       'Ver mais'.toUpperCase(),
                       style: TextStyle(

@@ -17,7 +17,7 @@ class ResumeTotalInvest extends StatelessWidget {
     return Text(
       AppHelpers.formatCurrency(total ?? 0),
       style: GoogleFonts.montserrat(
-        fontSize: size.width * .06,
+        fontSize: size.width * .055,
         fontWeight: FontWeight.bold,
         color: DefaultColors.defaultBlue,
       ),

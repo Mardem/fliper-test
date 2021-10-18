@@ -24,7 +24,7 @@ class LineResume extends StatelessWidget {
           Text(
             leftText ?? '...',
             style: TextStyle(
-              color: Color.fromRGBO(82, 86, 101, 1.0),
+              color: Color.fromRGBO(52, 57, 71, 1.0),
             ),
           ),
           Text(

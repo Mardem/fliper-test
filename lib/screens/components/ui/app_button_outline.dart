@@ -4,14 +4,15 @@ import 'package:flutter/material.dart';
 class AppButtonOutline extends StatelessWidget {
   final GestureTapCallback onPressed;
   final Widget child;
+  final EdgeInsets padding;
 
-  const AppButtonOutline({this.onPressed, this.child});
+  const AppButtonOutline({this.onPressed, this.child, this.padding});
 
   @override
   Widget build(BuildContext context) {
     return OutlinedButton(
       child: Padding(
-        padding: EdgeInsets.all(10.0),
+        padding: padding ?? EdgeInsets.all(0),
         child: child,
       ),
       style: ButtonStyle(

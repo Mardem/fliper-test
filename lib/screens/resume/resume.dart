@@ -1,6 +1,7 @@
 import 'package:fliper/config/colors/default.dart';
 import 'package:fliper/config/global.dart';
 import 'package:fliper/screens/components/layouts/main.dart';
+import 'package:fliper/screens/components/ui/app_button_outline.dart';
 import 'package:fliper/screens/resume/components/header.dart';
 import 'package:fliper/screens/resume/components/total_invest.dart';
 import 'package:flutter/material.dart';
@@ -105,6 +106,19 @@ class ResumeScreen extends StatelessWidget {
                   color: DefaultColors.defaultGrey.withOpacity(.2),
                   thickness: 2,
                 ),
+                Container(
+                  alignment: Alignment.bottomRight,
+                  child: AppButtonOutline(
+                    child: Text(
+                      'Ver mais'.toUpperCase(),
+                      style: TextStyle(
+                        color: DefaultColors.defaultBlue,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    onPressed: () => print('ver mais'),
+                  ),
+                )
               ],
             ),
           ),

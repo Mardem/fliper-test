@@ -1,11 +1,10 @@
 import 'package:fliper/config/colors/default.dart';
 import 'package:fliper/config/global.dart';
+import 'package:fliper/config/helpers.dart';
 import 'package:fliper/screens/components/layouts/main.dart';
 import 'package:fliper/screens/components/ui/app_button_outline.dart';
-import 'package:fliper/screens/resume/components/cdi.dart';
 import 'package:fliper/screens/resume/components/header.dart';
-import 'package:fliper/screens/resume/components/monthly_gains.dart';
-import 'package:fliper/screens/resume/components/rentability.dart';
+import 'package:fliper/screens/resume/components/line_resume.dart';
 import 'package:fliper/screens/resume/components/total_invest.dart';
 import 'package:flutter/material.dart';
 
@@ -22,6 +21,7 @@ class ResumeScreen extends StatelessWidget {
           Container(
             width: size.width,
             margin: GlobalConfig.marginX,
+            padding: EdgeInsets.all(25),
             decoration: BoxDecoration(
               boxShadow: [
                 BoxShadow(
@@ -35,24 +35,26 @@ class ResumeScreen extends StatelessWidget {
                 Radius.circular(20),
               ),
             ),
-            padding: EdgeInsets.all(16),
             child: Column(
               children: [
                 ResumeHeader(),
-                SizedBox(
-                  height: size.width * .05,
-                ),
+                SizedBox(height: size.width * .06),
                 Text(
                   'Valor investido',
                   style: TextStyle(
-                    color: Colors.black87,
+                    color: Colors.black87.withOpacity(.7),
                   ),
                 ),
-                ResumeTotalInvest(total: 400),
-                SizedBox(height: size.width * .05),
-                ResumeRentability(),
-                ResumeCDI(),
-                ResumeMonthlyGains(),
+                ResumeTotalInvest(total: 3200876),
+                SizedBox(height: size.width * .07),
+                LineResume(leftText: 'Rentabilidade/mês', rightValue: '2,767%'),
+                LineResume(leftText: 'CDI', rightValue: '3,45%'),
+                LineResume(
+                  leftText: 'Ganho/mês',
+                  rightValue: AppHelpers.formatCurrency(
+                    1833.23,
+                  ),
+                ),
                 Divider(
                   color: DefaultColors.defaultGrey.withOpacity(.2),
                   thickness: 2,

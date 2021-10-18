@@ -1,7 +1,17 @@
 import 'package:fliper/config/colors/default.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
-class ResumeRentability extends StatelessWidget {
+class LineResume extends StatelessWidget {
+  final String leftText;
+  final rightValue;
+
+  const LineResume({
+    Key key,
+    @required this.leftText,
+    @required this.rightValue,
+  }) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
@@ -11,10 +21,15 @@ class ResumeRentability extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text('Rentabilidade/mês'),
           Text(
-            '2.767%',
+            leftText ?? '...',
             style: TextStyle(
+              color: Color.fromRGBO(82, 86, 101, 1.0),
+            ),
+          ),
+          Text(
+            rightValue ?? '...',
+            style: GoogleFonts.montserrat(
               fontSize: size.width * .05,
               fontWeight: FontWeight.bold,
               color: DefaultColors.defaultBlue,

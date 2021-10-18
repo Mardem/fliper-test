@@ -1,5 +1,6 @@
 import 'package:fliper/config/colors/default.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:line_icons/line_icons.dart';
 
 class ResumeHeader extends StatelessWidget {
@@ -12,9 +13,9 @@ class ResumeHeader extends StatelessWidget {
         Expanded(
           child: Text(
             'Seu resumo',
-            style: TextStyle(
+            style: GoogleFonts.montserrat(
               color: DefaultColors.defaultBlue,
-              fontWeight: FontWeight.bold,
+              fontWeight: FontWeight.w700,
               fontSize: size.width * .05,
             ),
           ),

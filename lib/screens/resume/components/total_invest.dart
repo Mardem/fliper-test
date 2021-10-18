@@ -1,6 +1,7 @@
 import 'package:fliper/config/colors/default.dart';
+import 'package:fliper/config/helpers.dart';
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class ResumeTotalInvest extends StatelessWidget {
   final double total;
@@ -14,21 +15,12 @@ class ResumeTotalInvest extends StatelessWidget {
     final Size size = MediaQuery.of(context).size;
 
     return Text(
-      'R\$ ' + _formatNumber(total ?? 0),
-      style: TextStyle(
+      AppHelpers.formatCurrency(total ?? 0),
+      style: GoogleFonts.montserrat(
         fontSize: size.width * .06,
         fontWeight: FontWeight.bold,
         color: DefaultColors.defaultBlue,
       ),
     );
-  }
-
-  String _formatNumber(double number) {
-    if (number == 0) {
-      return '0,00';
-    }
-
-    var f = NumberFormat("###.00#", "pt_BR");
-    return f.format(number);
   }
 }

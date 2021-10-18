@@ -1,6 +1,6 @@
-import 'package:fliper/config/colors/default.dart';
 import 'package:fliper/screens/resume/resume.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 
 void main() {
@@ -15,12 +15,9 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
-        textTheme: Theme.of(
-          context,
-        ).textTheme.apply(
-              bodyColor: DefaultColors.defaultGrey,
-              displayColor: DefaultColors.defaultGrey,
-            ),
+        textTheme: GoogleFonts.montserratTextTheme(
+          Theme.of(context).textTheme,
+        ),
       ),
       home: ResumeScreen(),
     );

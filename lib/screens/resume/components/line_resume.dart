@@ -22,7 +22,7 @@ class LineResume extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(
-            leftText ?? '...',
+            leftText,
             style: TextStyle(
               color: Color.fromRGBO(52, 57, 71, 1.0),
             ),

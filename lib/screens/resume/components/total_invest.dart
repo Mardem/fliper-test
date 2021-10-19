@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class ResumeTotalInvest extends StatelessWidget {
-  final double total;
+  final double? total;
 
   const ResumeTotalInvest({
     required this.total,

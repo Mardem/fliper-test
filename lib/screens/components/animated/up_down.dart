@@ -28,12 +28,6 @@ class _AppDownAnimationState extends State<AppDownAnimation>
   ).animate(CurvedAnimation(parent: _controller, curve: Curves.easeInOut));
 
   @override
-  void dispose() {
-    super.dispose();
-    _controller.dispose();
-  }
-
-  @override
   Widget build(BuildContext context) {
     return SlideTransition(
       position: _animation,

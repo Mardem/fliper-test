@@ -53,6 +53,7 @@ flutter:
   assets:
     - src/
     - src/img/
+    - src/img/bgs/
     - src/img/home/
   #   - images/a_dot_ham.jpeg
 

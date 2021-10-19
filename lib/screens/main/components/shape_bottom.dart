@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class ShapeBottomStack extends StatelessWidget {
@@ -7,15 +8,15 @@ class ShapeBottomStack extends StatelessWidget {
 
   const ShapeBottomStack({
     Key? key,
-    this.bottom = -100,
-    this.right = -250,
+    this.bottom,
+    this.right,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Positioned(
-      bottom: bottom,
-      right: right,
+      bottom: bottom ?? ScreenUtil().setWidth(-100),
+      right: right ?? ScreenUtil().setWidth(-250),
       child: RotationTransition(
         turns: new AlwaysStoppedAnimation(-20 / 560),
         child: SvgPicture.asset(

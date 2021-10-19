@@ -1,24 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class TitleHomeStack extends StatelessWidget {
-  const TitleHomeStack({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
-    final Size size = MediaQuery.of(context).size;
-
     return Positioned(
-      bottom: 160,
-      left: -15,
-      width: size.width,
+      bottom: ScreenUtil().setWidth(160),
+      left: ScreenUtil().setWidth(-20),
+      width: ScreenUtil().screenWidth,
       child: Container(
         child: Column(
           children: [
             Text(
               'Administre seus investimentos \nem alguns cliques',
               style: GoogleFonts.openSans(
-                fontSize: size.width * .05,
+                fontSize: 20.sp,
                 fontWeight: FontWeight.w800,
                 color: Color.fromRGBO(64, 61, 61, 1.0),
               ),

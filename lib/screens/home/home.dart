@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:fliper/screens/components/ui/app_input.dart';
 import 'package:fliper/screens/home/components/card_gain.dart';
 import 'package:fliper/screens/home/components/card_list.dart';
@@ -16,7 +18,7 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       body: Container(
-        margin: EdgeInsets.only(top: 20),
+        margin: EdgeInsets.only(top: Platform.isAndroid ? 20 : 0),
         height: ScreenUtil().screenHeight,
         child: Stack(
           children: [

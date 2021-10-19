@@ -1,7 +1,7 @@
 import 'package:intl/intl.dart';
 
 abstract class AppHelpers {
-  static formatCurrency(double number) {
+  static formatCurrency(double? number) {
     if (number == 0) {
       return '0,00';
     }

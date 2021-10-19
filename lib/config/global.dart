@@ -4,6 +4,6 @@ abstract class GlobalConfig {
   static const EdgeInsets marginX = EdgeInsets.symmetric(horizontal: 25);
   static const EdgeInsets marginY = EdgeInsets.symmetric(vertical: 16);
 
-  static const EdgeInsets paddingX = EdgeInsets.symmetric(horizontal: 16);
+  static const EdgeInsets paddingX = EdgeInsets.symmetric(horizontal: 20);
   static const EdgeInsets paddingY = EdgeInsets.symmetric(vertical: 16);
 }

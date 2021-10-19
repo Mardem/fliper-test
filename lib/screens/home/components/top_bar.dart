@@ -9,12 +9,6 @@ class TopBar extends StatelessWidget {
 
     return Container(
       width: size.width,
-      decoration: BoxDecoration(
-        image: DecorationImage(
-          image: new ExactAssetImage('src/img/bgs/home.jpg'),
-          fit: BoxFit.cover,
-        ),
-      ),
       child: Row(
         children: [
           Flexible(
@@ -22,13 +16,13 @@ class TopBar extends StatelessWidget {
             fit: FlexFit.tight,
             child: CircleAvatar(
               foregroundColor: DefaultColors.defaultBlue,
-              backgroundColor: DefaultColors.accentBlue.withOpacity(.5),
+              backgroundColor: DefaultColors.accentBlue,
               radius: 30,
               child: Text(
                 'MC',
                 style: TextStyle(
                   fontWeight: FontWeight.w600,
-                  color: Colors.white,
+                  color: Colors.black87,
                 ),
               ),
             ),
@@ -39,24 +33,38 @@ class TopBar extends StatelessWidget {
             child: RichText(
               text: TextSpan(
                 text: 'Olá,\n',
-                style: TextStyle(color: Colors.white),
+                style: TextStyle(
+                  color: Colors.black87,
+                  fontWeight: FontWeight.w500,
+                ),
                 children: const <TextSpan>[
                   TextSpan(
                     text: 'Marden Cavalcante',
                     style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white),
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black,
+                    ),
                   ),
                 ],
               ),
             ),
           ),
           Flexible(
-            fit: FlexFit.tight,
             child: Container(
-              child: Icon(LineIcons.bell,
-                  size: size.width * .08, color: Colors.white),
+              padding: EdgeInsets.all(10),
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                border: Border.all(
+                  color: Colors.black12,
+                ),
+              ),
+              margin: EdgeInsets.all(10),
+              child: Icon(
+                LineIcons.bell,
+                size: size.width * .05,
+                color: Colors.black54,
+              ),
             ),
           ),
         ],

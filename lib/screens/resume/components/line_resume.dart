@@ -7,9 +7,9 @@ class LineResume extends StatelessWidget {
   final rightValue;
 
   const LineResume({
-    Key key,
-    @required this.leftText,
-    @required this.rightValue,
+    Key? key,
+    required this.leftText,
+    required this.rightValue,
   }) : super(key: key);
 
   @override

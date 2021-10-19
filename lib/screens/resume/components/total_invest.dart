@@ -7,7 +7,7 @@ class ResumeTotalInvest extends StatelessWidget {
   final double total;
 
   const ResumeTotalInvest({
-    @required this.total,
+    required this.total,
   });
 
   @override

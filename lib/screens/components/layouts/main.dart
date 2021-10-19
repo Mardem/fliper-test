@@ -2,7 +2,7 @@ import 'package:fliper/config/colors/default.dart';
 import 'package:flutter/material.dart';
 
 class MainLayout extends StatelessWidget {
-  final Widget body;
+  final Widget? body;
 
   const MainLayout({
     this.body,

@@ -1,10 +1,13 @@
+import 'package:fliper/config/colors/default.dart';
 import 'package:fliper/screens/home/home.dart';
+import 'package:fliper/screens/main/home.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
+import 'package:line_icons/line_icons.dart';
 import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
 
 void main() {
@@ -27,7 +30,7 @@ class MyApp extends StatelessWidget {
             Theme.of(context).textTheme,
           ),
         ),
-        home: MainMenu(),
+        home: MainScreen(),
       ),
     );
   }
@@ -47,49 +50,50 @@ class MainMenu extends StatelessWidget {
       controller: _controller,
       screens: [
         HomeScreen(),
-        HomeScreen(),
+        MainScreen(),
       ],
       items: [
         PersistentBottomNavBarItem(
-          icon: Icon(CupertinoIcons.home),
-          title: ("Home"),
-          activeColorPrimary: CupertinoColors.activeBlue,
-          inactiveColorPrimary: CupertinoColors.systemGrey,
+          icon: Icon(LineIcons.home),
+          title: ("Início"),
+          activeColorPrimary: DefaultColors.defaultBlue,
+          inactiveColorPrimary: DefaultColors.defaultGrey,
         ),
         PersistentBottomNavBarItem(
-          icon: Icon(CupertinoIcons.home),
-          title: ("Home2"),
-          activeColorPrimary: CupertinoColors.activeBlue,
-          inactiveColorPrimary: CupertinoColors.systemGrey,
+          icon: Icon(LineIcons.userCircle),
+          title: ("Perfil"),
+          activeColorPrimary: DefaultColors.defaultBlue,
+          inactiveColorPrimary: DefaultColors.defaultGrey,
         )
       ],
       confineInSafeArea: true,
-      backgroundColor: Colors.white, // Default is Colors.white.
-      handleAndroidBackButtonPress: true, // Default is true.
-      resizeToAvoidBottomInset:
-          true, // This needs to be true if you want to move up the screen when keyboard appears. Default is true.
-      stateManagement: true, // Default is true.
-      hideNavigationBarWhenKeyboardShows:
-          true, // Recommended to set 'resizeToAvoidBottomInset' as true while using this argument. Default is true.
       decoration: NavBarDecoration(
-        borderRadius: BorderRadius.circular(10.0),
+        boxShadow: [
+          BoxShadow(
+            color: Color.fromRGBO(223, 228, 241, 1.0),
+            spreadRadius: 4,
+            offset: Offset(2, 0),
+            blurRadius: 30,
+          ),
+        ],
         colorBehindNavBar: Colors.white,
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(30),
+          topRight: Radius.circular(30),
+        ),
       ),
       popAllScreensOnTapOfSelectedTab: true,
       popActionScreens: PopActionScreensType.all,
       itemAnimationProperties: ItemAnimationProperties(
-        // Navigation Bar's items animation properties.
         duration: Duration(milliseconds: 200),
         curve: Curves.ease,
       ),
       screenTransitionAnimation: ScreenTransitionAnimation(
-        // Screen transition animation on change of selected tab.
         animateTabTransition: true,
         curve: Curves.ease,
         duration: Duration(milliseconds: 200),
       ),
-      navBarStyle:
-          NavBarStyle.style1, // Choose the nav bar style with this property.
+      navBarStyle: NavBarStyle.style12,
     );
   }
 }

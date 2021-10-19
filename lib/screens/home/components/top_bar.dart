@@ -1,5 +1,7 @@
 import 'package:fliper/config/colors/default.dart';
+import 'package:fliper/screens/main/home.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:line_icons/line_icons.dart';
 
 class TopBar extends StatelessWidget {
@@ -43,7 +45,7 @@ class TopBar extends StatelessWidget {
                     style: TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
-                      color: Colors.black,
+                      color: Colors.black87,
                     ),
                   ),
                 ],
@@ -51,20 +53,23 @@ class TopBar extends StatelessWidget {
             ),
           ),
           Flexible(
-            child: Container(
-              padding: EdgeInsets.all(10),
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                border: Border.all(
-                  color: Colors.black12,
+            child: GestureDetector(
+              child: Container(
+                padding: EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  border: Border.all(
+                    color: Colors.black12,
+                  ),
+                ),
+                margin: EdgeInsets.all(10),
+                child: Icon(
+                  LineIcons.alternateSignOut,
+                  size: size.width * .05,
+                  color: Colors.black54,
                 ),
               ),
-              margin: EdgeInsets.all(10),
-              child: Icon(
-                LineIcons.bell,
-                size: size.width * .05,
-                color: Colors.black54,
-              ),
+              onTap: () => Get.off(() => MainScreen()),
             ),
           ),
         ],

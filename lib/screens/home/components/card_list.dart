@@ -4,9 +4,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class CardList extends StatelessWidget {
-  final double? value;
+  final double value;
+  final String? title;
+  final String? description;
 
-  const CardList({this.value = 0});
+  const CardList({this.value = 0, this.title, this.description});
 
   @override
   Widget build(BuildContext context) {
@@ -22,15 +24,15 @@ class CardList extends StatelessWidget {
               height: 50,
               margin: EdgeInsets.only(bottom: 3, right: 10),
               decoration: BoxDecoration(
-                color: value! > 0
+                color: value > 0
                     ? Color.fromRGBO(202, 248, 230, 0.6019607843137255)
                     : Color.fromRGBO(248, 202, 202, 0.6039215686274509),
                 borderRadius: BorderRadius.circular(10),
               ),
               child: Icon(
-                value! > 0 ? Icons.arrow_upward : Icons.arrow_downward,
+                value > 0 ? Icons.arrow_upward : Icons.arrow_downward,
                 size: 17,
-                color: value! > 0
+                color: value > 0
                     ? Color.fromRGBO(43, 156, 109, 1.0)
                     : Color.fromRGBO(156, 43, 43, 1.0),
               ),
@@ -44,7 +46,7 @@ class CardList extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'City Bank',
+                    title ?? '...',
                     style: GoogleFonts.montserrat(
                       color: Colors.black87,
                       fontWeight: FontWeight.w500,
@@ -53,7 +55,7 @@ class CardList extends StatelessWidget {
                   ),
                   SizedBox(height: 5),
                   Text(
-                    'City Bank',
+                    description ?? '...',
                     style: GoogleFonts.montserrat(
                         color: Colors.black87,
                         fontSize: 12.sp,
@@ -71,7 +73,7 @@ class CardList extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
                   Text(
-                    value! > 0 ? 'Entrada' : 'Saída',
+                    value > 0 ? 'Entrada' : 'Saída',
                     style: GoogleFonts.montserrat(
                       color: Colors.black87,
                       fontSize: 12.sp,
@@ -82,7 +84,7 @@ class CardList extends StatelessWidget {
                   Text(
                     AppHelpers.formatCurrency(value),
                     style: GoogleFonts.montserrat(
-                      color: value! > 0
+                      color: value > 0
                           ? Color.fromRGBO(43, 156, 109, 1.0)
                           : Color.fromRGBO(156, 43, 43, 1.0),
                       fontWeight: FontWeight.w500,

@@ -59,7 +59,7 @@ class CardGainHome extends StatelessWidget {
                   ],
                 ),
               ),
-              flex: 2,
+              flex: 3,
             ),
             Expanded(
               child: Container(

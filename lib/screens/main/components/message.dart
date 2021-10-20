@@ -8,7 +8,7 @@ class MessageStack extends StatelessWidget {
   Widget build(BuildContext context) {
     return Positioned(
       height: ScreenUtil().setWidth(50),
-      top: ScreenUtil().setWidth(150),
+      top: ScreenUtil().setWidth(120),
       left: ScreenUtil().setWidth(-15),
       child: AppDownAnimation(
         child: SvgPicture.asset(

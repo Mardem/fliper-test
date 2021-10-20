@@ -8,8 +8,8 @@ class PizzaChartStack extends StatelessWidget {
   Widget build(BuildContext context) {
     return Positioned(
       width: ScreenUtil().screenWidth,
-      height: ScreenUtil().screenWidth * .13,
-      top: ScreenUtil().setWidth(380),
+      height: ScreenUtil().setHeight(50),
+      bottom: ScreenUtil().setWidth(30),
       left: ScreenUtil().setWidth(-80),
       child: AppDownAnimation(
         child: SvgPicture.asset(

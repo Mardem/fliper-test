@@ -7,8 +7,8 @@ class BarChartStack extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Positioned(
-      height: ScreenUtil().screenWidth * .2,
-      top: ScreenUtil().setWidth(340),
+      height: ScreenUtil().setHeight(120),
+      bottom: ScreenUtil().setWidth(15),
       right: ScreenUtil().setWidth(-50),
       child: AppDownAnimation(
         endPosition: ScreenUtil().setWidth(0.2),

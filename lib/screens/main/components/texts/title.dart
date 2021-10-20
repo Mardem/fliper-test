@@ -7,8 +7,7 @@ class TitleHomeStack extends StatelessWidget {
   Widget build(BuildContext context) {
     return Positioned(
       bottom: ScreenUtil().setWidth(160),
-      left: ScreenUtil().setWidth(-15),
-      width: ScreenUtil().screenWidth,
+      left: ScreenUtil().setWidth(18),
       child: Container(
         child: Column(
           children: [

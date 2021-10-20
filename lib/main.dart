@@ -2,6 +2,7 @@ import 'package:fliper/config/colors/default.dart';
 import 'package:fliper/notifiers/notifiers.dart';
 import 'package:fliper/screens/home/home.dart';
 import 'package:fliper/screens/main/home.dart';
+import 'package:fliper/screens/profile/profile.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
@@ -57,7 +58,7 @@ class MainMenu extends StatelessWidget {
       controller: _controller,
       screens: [
         HomeScreen(),
-        MainScreen(),
+        ProfileScreen(),
       ],
       items: [
         PersistentBottomNavBarItem(

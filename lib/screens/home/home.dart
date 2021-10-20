@@ -43,8 +43,8 @@ class HomeScreen extends StatelessWidget {
                 height: ScreenUtil().screenHeight,
                 child: Container(
                   margin: EdgeInsets.symmetric(horizontal: 20),
-                  child: ListView(
-                    padding: EdgeInsets.all(0),
+                  child: Column(
+                    // padding: EdgeInsets.all(0),
                     children: [
                       AppInput(decoration: _inputDecoration(hint: 'Pesquisar')),
                       SizedBox(height: 20),
@@ -53,8 +53,8 @@ class HomeScreen extends StatelessWidget {
                         onPressed: () => print('oie'),
                       ),
                       LastGainsTextHome(),
-                      Container(
-                        height: ScreenUtil().setHeight(300),
+                      Expanded(
+                        // height: ScreenUtil().setHeight(300),
                         child: ListView.builder(
                           padding: EdgeInsets.all(0),
                           itemCount:

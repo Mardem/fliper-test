@@ -1,10 +1,12 @@
 import 'package:fliper/config/colors/default.dart';
 import 'package:fliper/screens/components/ui/app_button.dart';
 import 'package:fliper/services/resume.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class CTAButtonStack extends StatelessWidget {
+class CTAButtonStack extends StatelessWidget with ChangeNotifier {
   @override
   Widget build(BuildContext context) {
     return Positioned(
@@ -21,8 +23,15 @@ class CTAButtonStack extends StatelessWidget {
             ),
           ),
           onPressed: () async {
-            ResumeService service = ResumeService();
-            await service.filter(31);
+            EasyLoading.showToast(
+              'Iniciando...',
+              toastPosition: EasyLoadingToastPosition.bottom,
+            );
+
+            ResumeService service = ResumeService(context);
+            await service.list();
+
+            EasyLoading.dismiss();
           },
           // onPressed: () => Get.off(() => MainMenu()),
         ),

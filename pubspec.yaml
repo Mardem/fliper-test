@@ -38,6 +38,7 @@ dependencies:
   persistent_bottom_nav_bar: ^4.0.2
   hasura_connect: ^3.0.6
   flutter_easyloading: ^3.0.3
+  provider: ^6.0.1
 
   logger: ^1.1.0
 

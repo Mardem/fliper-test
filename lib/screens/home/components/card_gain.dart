@@ -53,7 +53,7 @@ class CardGainHome extends StatelessWidget {
                       style: GoogleFonts.montserrat(
                         color: Colors.white,
                         fontWeight: FontWeight.bold,
-                        fontSize: 25.sp,
+                        fontSize: 23.sp,
                       ),
                     ),
                   ],

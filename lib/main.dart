@@ -1,4 +1,5 @@
 import 'package:fliper/config/colors/default.dart';
+import 'package:fliper/notifiers/notifiers.dart';
 import 'package:fliper/screens/home/home.dart';
 import 'package:fliper/screens/main/home.dart';
 import 'package:flutter/cupertino.dart';
@@ -10,13 +11,19 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
+import 'package:provider/provider.dart';
 
 void main() {
   Intl.defaultLocale = 'pt_BR';
-  runApp(MyApp());
+  runApp(
+    MultiProvider(
+      providers: notifiers,
+      child: FliperWallet(),
+    ),
+  );
 }
 
-class MyApp extends StatelessWidget {
+class FliperWallet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
@@ -39,8 +46,6 @@ class MyApp extends StatelessWidget {
 }
 
 class MainMenu extends StatelessWidget {
-  const MainMenu({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     final PersistentTabController _controller;

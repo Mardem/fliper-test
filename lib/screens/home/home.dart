@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:fliper/notifiers/resume/resume.dart';
 import 'package:fliper/screens/components/ui/app_input.dart';
 import 'package:fliper/screens/home/components/card_gain.dart';
 import 'package:fliper/screens/home/components/card_list.dart';
@@ -9,6 +10,7 @@ import 'package:fliper/screens/home/components/top_home_shape.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:line_icons/line_icons.dart';
+import 'package:provider/provider.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -17,52 +19,58 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: Container(
-        margin: EdgeInsets.only(top: Platform.isAndroid ? 20 : 0),
-        height: ScreenUtil().screenHeight,
-        child: Stack(
-          children: [
-            TopHomeShape(),
-            Positioned(child: TopBar(), height: ScreenUtil().setHeight(170)),
-            Positioned(
-              top: ScreenUtil().setHeight(130),
-              width: ScreenUtil().screenWidth,
-              height: ScreenUtil().screenHeight,
-              child: Container(
-                margin: EdgeInsets.symmetric(horizontal: 20),
-                child: ListView(
-                  padding: EdgeInsets.all(0),
-                  children: [
-                    AppInput(decoration: _inputDecoration(hint: 'Pesquisar')),
-                    SizedBox(height: 20),
-                    CardGainHome(
-                      totalGains: 20030,
-                      onPressed: () => print('oie'),
-                    ),
-                    LastGainsTextHome(),
-                    Container(
-                      height: ScreenUtil().setHeight(300),
-                      child: ListView.builder(
-                        padding: EdgeInsets.all(0),
-                        itemCount: 10,
-                        itemBuilder: (BuildContext context, int index) {
-                          int calc = index % 2;
-                          index += 1;
-
-                          return CardList(
-                            title: 'Título ' + index.toString(),
-                            value: calc == 1 ? 100 : -100,
-                          );
-                        },
+      body: Consumer<ResumeNotifier>(builder: (
+        BuildContext context,
+        ResumeNotifier notifier,
+        Widget? child,
+      ) {
+        return Container(
+          margin: EdgeInsets.only(top: Platform.isAndroid ? 20 : 0),
+          height: ScreenUtil().screenHeight,
+          child: Stack(
+            children: [
+              TopHomeShape(),
+              Positioned(child: TopBar(), height: ScreenUtil().setHeight(170)),
+              Positioned(
+                top: ScreenUtil().setHeight(130),
+                width: ScreenUtil().screenWidth,
+                height: ScreenUtil().screenHeight,
+                child: Container(
+                  margin: EdgeInsets.symmetric(horizontal: 20),
+                  child: ListView(
+                    padding: EdgeInsets.all(0),
+                    children: [
+                      AppInput(decoration: _inputDecoration(hint: 'Pesquisar')),
+                      SizedBox(height: 20),
+                      CardGainHome(
+                        totalGains: notifier.total.toDouble(),
+                        onPressed: () => print('oie'),
                       ),
-                    )
-                  ],
+                      LastGainsTextHome(),
+                      Container(
+                        height: ScreenUtil().setHeight(300),
+                        child: ListView.builder(
+                          padding: EdgeInsets.all(0),
+                          itemCount: 10,
+                          itemBuilder: (BuildContext context, int index) {
+                            int calc = index % 2;
+                            index += 1;
+
+                            return CardList(
+                              title: 'Título ' + index.toString(),
+                              value: calc == 1 ? 100 : -100,
+                            );
+                          },
+                        ),
+                      )
+                    ],
+                  ),
                 ),
-              ),
-            )
-          ],
-        ),
-      ),
+              )
+            ],
+          ),
+        );
+      }),
     );
   }
 

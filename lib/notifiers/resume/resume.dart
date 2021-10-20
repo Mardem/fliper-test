@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 class ResumeNotifier extends ChangeNotifier {
   SummaryDetailEntity? detailEntity;
   SummaryListEntity? listEntity;
+  WealthSummary? summarySelected;
+
   int total = 0;
 
   seedDetail(Map<String, dynamic> json) {
@@ -16,6 +18,12 @@ class ResumeNotifier extends ChangeNotifier {
   seedList(Map<String, dynamic> json) {
     this.listEntity = SummaryListEntity.fromJson(json);
     _total();
+    notifyListeners();
+  }
+
+  selectSummary(WealthSummary summary) {
+    this.summarySelected = summary;
+
     notifyListeners();
   }
 

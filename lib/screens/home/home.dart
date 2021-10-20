@@ -1,5 +1,7 @@
 import 'dart:io';
 
+import 'package:fliper/config/helpers.dart';
+import 'package:fliper/entities/summary/summary_list.dart';
 import 'package:fliper/notifiers/resume/resume.dart';
 import 'package:fliper/screens/components/ui/app_input.dart';
 import 'package:fliper/screens/home/components/card_gain.dart';
@@ -51,14 +53,26 @@ class HomeScreen extends StatelessWidget {
                         height: ScreenUtil().setHeight(300),
                         child: ListView.builder(
                           padding: EdgeInsets.all(0),
-                          itemCount: 10,
-                          itemBuilder: (BuildContext context, int index) {
-                            int calc = index % 2;
-                            index += 1;
+                          itemCount:
+                              notifier.listEntity?.data?.wealthSummary.length,
+                          itemBuilder: (
+                            BuildContext context,
+                            int index,
+                          ) {
+                            final WealthSummary? item =
+                                notifier.listEntity?.data?.wealthSummary[index];
+
+                            String title =
+                                !item!.hasHistory! ? 'Saque' : 'Ganhos mensal';
 
                             return CardList(
-                              title: 'Título ' + index.toString(),
-                              value: calc == 1 ? 100 : -100,
+                              title: title + ' #' + item.id!.toString(),
+                              value: item.gain!.toDouble(),
+                              withdraw: item.hasHistory!,
+                              description: 'Total: ' +
+                                  AppHelpers.formatCurrency(
+                                    item.total!.toDouble(),
+                                  ),
                             );
                           },
                         ),

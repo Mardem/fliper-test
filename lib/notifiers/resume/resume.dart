@@ -2,12 +2,13 @@ import 'package:fliper/entities/summary/summary_detail.dart';
 import 'package:fliper/entities/summary/summary_list.dart';
 import 'package:flutter/material.dart';
 
-class ResumeNotifier extends ChangeNotifier {
+class ResumeNotifier with ChangeNotifier {
   SummaryDetailEntity? detailEntity;
   SummaryListEntity? listEntity;
   WealthSummary? summarySelected;
 
   int total = 0;
+  double totalSelected = 0.0;
 
   seedDetail(Map<String, dynamic> json) {
     this.detailEntity = SummaryDetailEntity.fromJson(json);

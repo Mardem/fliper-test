@@ -7,13 +7,13 @@ class TitleHomeStack extends StatelessWidget {
   Widget build(BuildContext context) {
     return Positioned(
       bottom: ScreenUtil().setWidth(160),
-      left: ScreenUtil().setWidth(-20),
+      left: ScreenUtil().setWidth(-15),
       width: ScreenUtil().screenWidth,
       child: Container(
         child: Column(
           children: [
             Text(
-              'Administre seus investimentos \nem alguns cliques',
+              'Gerencie seus investimentos \nem alguns cliques',
               style: GoogleFonts.openSans(
                 fontSize: 20.sp,
                 fontWeight: FontWeight.w800,

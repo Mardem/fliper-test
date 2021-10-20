@@ -1,8 +1,12 @@
 import 'dart:io';
 
+import 'package:fliper/screens/resume_v2/components/resume_grid.dart';
+import 'package:fliper/screens/resume_v2/components/shape_bottom.dart';
+import 'package:fliper/screens/resume_v2/components/shape_top.dart';
+import 'package:fliper/screens/resume_v2/components/top_bar.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
 
 class ResumeScreenV2 extends StatelessWidget {
   @override
@@ -13,14 +17,14 @@ class ResumeScreenV2 extends StatelessWidget {
         height: ScreenUtil().screenHeight,
         child: Stack(
           children: [
+            ResumeShapeTopStack(),
+            ResumeShapeBottomStack(),
+            ResumeTopBarStack(),
             Positioned(
-              top: ScreenUtil().setWidth(-300),
-              right: ScreenUtil().setWidth(-100),
-              height: ScreenUtil().setHeight(730),
-              child: SvgPicture.asset(
-                'src/img/home/shape_top.svg',
-                semanticsLabel: 'Shape top',
-              ),
+              top: ScreenUtil().setWidth(100),
+              height: ScreenUtil().screenHeight * .8,
+              width: ScreenUtil().screenWidth,
+              child: ResumeGridDetail(),
             )
           ],
         ),

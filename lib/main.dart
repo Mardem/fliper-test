@@ -3,6 +3,7 @@ import 'package:fliper/screens/home/home.dart';
 import 'package:fliper/screens/main/home.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -31,6 +32,7 @@ class MyApp extends StatelessWidget {
           ),
         ),
         home: MainScreen(),
+        builder: EasyLoading.init(),
       ),
     );
   }

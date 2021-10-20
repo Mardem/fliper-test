@@ -1,9 +1,8 @@
 import 'package:fliper/config/colors/default.dart';
-import 'package:fliper/main.dart';
 import 'package:fliper/screens/components/ui/app_button.dart';
+import 'package:fliper/services/resume.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/get.dart';
 
 class CTAButtonStack extends StatelessWidget {
   @override
@@ -21,7 +20,11 @@ class CTAButtonStack extends StatelessWidget {
               color: Colors.white,
             ),
           ),
-          onPressed: () => Get.off(() => MainMenu()),
+          onPressed: () async {
+            ResumeService service = ResumeService();
+            await service.filter(31);
+          },
+          // onPressed: () => Get.off(() => MainMenu()),
         ),
       ),
     );

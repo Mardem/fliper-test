@@ -1,6 +1,7 @@
-import 'package:fliper/config/colors/default.dart';
 import 'package:fliper/screens/main/components/shape_bottom.dart';
 import 'package:fliper/screens/main/components/shape_top.dart';
+import 'package:fliper/screens/profile/components/avatar.dart';
+import 'package:fliper/screens/profile/components/line.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -16,63 +17,22 @@ class ProfileScreen extends StatelessWidget {
           ShapeTopStack(),
           ShapeBottomStack(),
           Positioned(
-            height: ScreenUtil().setHeight(200),
+            height: ScreenUtil().setHeight(210),
             width: ScreenUtil().screenWidth,
-            top: ScreenUtil().setHeight(100),
-            child: Container(
-              color: Colors.black.withOpacity(.3),
-              child: Stack(
-                children: [
-                  Positioned(
-                    width: ScreenUtil().screenWidth / 2,
-                    height: ScreenUtil().setHeight(100),
-                    left: ScreenUtil().screenWidth / 4,
-                    top: ScreenUtil().setWidth(40),
-                    child: Container(
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        shape: BoxShape.circle,
-                        boxShadow: [
-                          BoxShadow(
-                            color: DefaultColors.defaultBlue.withOpacity(.4),
-                            blurRadius: 30,
-                          )
-                        ],
-                      ),
-                      child: Container(
-                        margin: EdgeInsets.all(7),
-                        decoration: BoxDecoration(
-                          color: Colors.red,
-                          shape: BoxShape.circle,
-                        ),
-                      ),
-                    ),
-                  ),
-                  Positioned(
-                    width: ScreenUtil().setHeight(25),
-                    height: ScreenUtil().setWidth(25),
-                    right: ScreenUtil().setWidth(80),
-                    child: Container(
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: Colors.red,
-                      ),
-                    ),
-                  ),
-                  Positioned(
-                    width: ScreenUtil().setHeight(15),
-                    height: ScreenUtil().setWidth(15),
-                    right: ScreenUtil().setWidth(80),
-                    top: ScreenUtil().setWidth(30),
-                    child: Container(
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: Colors.red,
-                      ),
-                    ),
-                  )
-                ],
-              ),
+            top: ScreenUtil().setWidth(100),
+            child: UserProfileAvatar(),
+          ),
+          Positioned(
+            width: ScreenUtil().screenWidth,
+            height: ScreenUtil().screenHeight,
+            top: 380,
+            child: ListView(
+              padding: EdgeInsets.all(0),
+              children: [
+                LineItemProfile(),
+                LineItemProfile(),
+                LineItemProfile(),
+              ],
             ),
           )
         ],

@@ -12,6 +12,7 @@ import 'package:fliper/screens/home/components/last_gains_text.dart';
 import 'package:fliper/screens/home/components/top_bar.dart';
 import 'package:fliper/screens/home/components/top_home_shape.dart';
 import 'package:fliper/screens/resume/resume.dart';
+import 'package:fliper/screens/resume_v2/resume_v2.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -170,7 +171,7 @@ class HomeScreen extends StatelessWidget {
               onPressed: () {
                 notifier.selectSummary(summary);
 
-                Get.off(() => ResumeScreen());
+                Get.off(() => ResumeScreenV2());
               },
             )
           ],

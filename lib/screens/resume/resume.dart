@@ -1,7 +1,7 @@
 import 'package:fliper/config/colors/default.dart';
 import 'package:fliper/config/global.dart';
 import 'package:fliper/config/helpers.dart';
-import 'package:fliper/main.dart';
+import 'package:fliper/menu.dart';
 import 'package:fliper/notifiers/resume/resume.dart';
 import 'package:fliper/screens/components/layouts/main.dart';
 import 'package:fliper/screens/components/ui/app_button_outline.dart';

@@ -1,6 +1,6 @@
 import 'package:fliper/config/credentials.dart';
-import 'package:fliper/entities/factories/summary/summary_detail.dart';
-import 'package:fliper/main.dart';
+import 'package:fliper/entities/factories/summary/summary_detail_factory.dart';
+import 'package:fliper/menu.dart';
 import 'package:fliper/notifiers/resume/resume.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';

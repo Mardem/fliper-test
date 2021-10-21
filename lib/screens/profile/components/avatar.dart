@@ -62,7 +62,7 @@ class UserProfileAvatar extends StatelessWidget {
                     'main@marden.dev',
                     style: GoogleFonts.montserrat(
                       fontWeight: FontWeight.w400,
-                      fontSize: 10.sp,
+                      fontSize: 13.sp,
                       wordSpacing: 5,
                       color: DefaultColors.defaultGrey,
                     ),

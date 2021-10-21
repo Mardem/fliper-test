@@ -1,12 +1,11 @@
 import 'package:fliper/config/colors/default.dart';
 import 'package:fliper/screens/components/ui/app_button.dart';
 import 'package:fliper/services/resume.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class CTAButtonStack extends StatelessWidget with ChangeNotifier {
+class CTAButtonStack extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Positioned(

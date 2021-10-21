@@ -31,6 +31,7 @@ Foi proposto o desenvolvimento de apenas **um card** com a integração a uma AP
 O projeto foi desenvolvido seguindo alguns padrões de projetos, princípios e tecnologias:
 
 **Padrões de projetos e princípios**
+<br>
 ![KISS (Princípio)](https://img.shields.io/badge/Princ%C3%ADpio%20-Single%20Responsibility-00599C)
 ![KISS (Princípio)](https://img.shields.io/badge/Princ%C3%ADpio%20-KISS-00599C)  
 ![KISS (Princípio)](https://img.shields.io/badge/Design%20Pattern-Factory-00599C) 
